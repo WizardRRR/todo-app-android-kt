@@ -7,16 +7,28 @@
     android:layout_height="match_parent"
     android:orientation="vertical"
     android:padding="20dp"
+    android:background="#000714"
     tools:context=".MainActivity">
 
     <TextView
-        android:id="@+id/textView"
+        android:id="@+id/titleApp"
         android:layout_width="match_parent"
         android:layout_height="wrap_content"
-        android:layout_marginTop="20dp"
-        android:text="Tareas"
+        android:layout_marginTop="50dp"
+        android:fontFamily="sans-serif-black"
+        android:text="TodoListApp"
         android:textAlignment="center"
+        android:textColor="#b9c0cd"
         android:textSize="24sp" />
+
+    <TextView
+        android:id="@+id/txtDescriptionApp"
+        android:layout_width="match_parent"
+        android:layout_height="wrap_content"
+        android:layout_marginBottom="10dp"
+        android:text="Registre sus tareas cotidianas en esta aplicación"
+        android:textAlignment="center"
+        android:textColor="#b9c0cd" />
 
     <com.google.android.material.textfield.TextInputLayout
         android:layout_width="match_parent"
@@ -26,7 +38,9 @@
             android:id="@+id/txtTitle"
             android:layout_width="match_parent"
             android:layout_height="wrap_content"
-            android:hint="Titulo de la tarea" />
+            android:layout_marginBottom="10dp"
+            android:hint="Titulo de la tarea"
+            android:textColor="#b9c0cd" />
 
     </com.google.android.material.textfield.TextInputLayout>
 
@@ -38,8 +52,14 @@
             android:id="@+id/txtDescription"
             android:layout_width="match_parent"
             android:layout_height="wrap_content"
-            android:hint="Descripción" />
+            android:layout_marginBottom="15dp"
+            android:hint="Descripción"
+            android:textColor="#b9c0cd" />
     </com.google.android.material.textfield.TextInputLayout>
+
+    <com.google.android.material.textfield.TextInputLayout
+        android:layout_width="match_parent"
+        android:layout_height="wrap_content"/>
 
     <Button
         android:id="@+id/btnSave"
@@ -53,7 +73,7 @@
         android:id="@+id/btnUpdate"
         android:layout_width="match_parent"
         android:layout_height="wrap_content"
-        android:backgroundTint="#25C585"
+        android:backgroundTint="#2ABD4F"
         android:onClick="update"
         android:text="Guardar cambios" />
 
@@ -61,7 +81,7 @@
         android:id="@+id/btnCancel"
         android:layout_width="match_parent"
         android:layout_height="wrap_content"
-        android:backgroundTint="#8F8F8F"
+        android:backgroundTint="#0F1623"
         android:onClick="cancel"
         android:text="Cancelar" />
 
