@@ -5,6 +5,10 @@ plugins {
 }
 
 android {
+    buildFeatures {
+        viewBinding = true
+    }
+
     namespace = "com.wizardrrr.todoapp"
     compileSdk = 34
 
