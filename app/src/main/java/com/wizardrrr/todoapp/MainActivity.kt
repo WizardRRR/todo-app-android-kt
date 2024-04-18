@@ -71,7 +71,12 @@ class MainActivity : AppCompatActivity() {
             description.error = "Debe ingresar la descripción"
         } else {
             GlobalScope.launch {
-                base.taskDao().insert(Task(title = title.text.toString(), description = description.text.toString()))
+                base.taskDao().insert(Task(
+                    title = title.text.toString(),
+                    description = description.text.toString(),
+                    createdAt = System.currentTimeMillis()
+                ))
+
                 runOnUiThread{
                     clearFields()
                     binding.txtMessage.text =  "Guardado con exito!"
@@ -84,7 +89,12 @@ class MainActivity : AppCompatActivity() {
     fun delete(v: View) {
 
             GlobalScope.launch {
-                base.taskDao().delete(Task(id = idTask,title = binding.txtTitle.text.toString(), description = binding.txtDescription.text.toString()))
+                base.taskDao().delete(Task(
+                    id = idTask,
+                    title = binding.txtTitle.text.toString(),
+                    description = binding.txtDescription.text.toString(),
+                    createdAt = System.currentTimeMillis()
+                ))
                 runOnUiThread{
                     clearFields()
                     binding.txtMessage.text =  "Eliminado con exito!"
@@ -107,7 +117,12 @@ class MainActivity : AppCompatActivity() {
             description.error = "Debe ingresar la descripción"
         } else {
             GlobalScope.launch {
-                base.taskDao().update(Task(id = idTask,title = title.text.toString(), description = description.text.toString()))
+                base.taskDao().update(Task(
+                    id = idTask,
+                    title = title.text.toString(),
+                    description = description.text.toString(),
+                    createdAt = System.currentTimeMillis()
+                ))
                 runOnUiThread{
                     clearFields()
                     binding.txtMessage.text =  "Tarea actualizada con exito!"
